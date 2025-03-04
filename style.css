@@ -1,0 +1,181 @@
+ /* General Styles */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    transition: 0.3s;
+}
+.dark-mode {
+    background-color: #1e1e1e;
+    color: #f9f9f9;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.navbar-toggler button span:focus,.navbar-toggler button span:active{
+    outline:none;
+    border: none;
+}
+
+/*******************  theme    ************************/
+/* Dark Mode Toggle */
+.theme-toggle {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 20px;
+}
+.theme-toggle button {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.theme-toggle button:hover {
+    background: #555;
+}
+
+
+/* Dark Mode Adjustments */
+.dark-mode .faq {
+    background: #2a2a2a;
+    color: #f9f9f9;
+}
+.dark-mode .faq:hover {
+    background: #3a3a3a;
+}
+
+
+/*****************  Search bar   *******************/
+/* Search Box */
+.search-box {
+    margin-bottom: 20px;
+}
+.search-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+/******************  accordion's  ********************/
+
+/* FAQ Section */
+.faq-container {
+    text-align: left;
+}
+
+.faq-category h4 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    font-weight: bolder;
+    margin-top: 20px;
+    color: #007bff;
+}
+
+/* FAQ Item */
+.faq {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.faq:hover {
+    background: #f0f0f0;
+}
+.faq-question {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq i {
+    transition: 0.3s;
+}
+.faq-answer {
+    display: none;
+    padding-top: 10px;
+    color:rgb(137, 63, 206);
+}
+.faq.open .faq-answer {
+    display: block;
+}
+.faq.open .faq-question i {
+    transform: rotate(180deg);
+}
+
+
+/* Fade-in effect for FAQ answers */
+.faq-answer {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.faq-question:hover + .faq-answer {
+    opacity: 1;
+}
+
+/* Hover animation for buttons */
+.btn {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #17a2b8; 
+    color: white;
+}
+
+/* Smooth transition for theme toggle button */
+.theme-toggle button {
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle button:hover {
+    transform: scale(1.05); 
+}
+
+@media (max-width: 768px) { 
+    .custom-navbar {
+        background-color: #444141 !important;
+        padding: 20px; 
+    }
+      
+    .custom-navbar .navbar-nav .nav-link {
+        color: white !important;
+    }
+
+    .custom-toggler {
+        border:none;
+        border-color: white !important;
+    }
+      
+    .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .custom-toggler:focus,.custom-toggler:active {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+  }
